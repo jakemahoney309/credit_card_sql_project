@@ -1,7 +1,7 @@
 # Credit Card SQL Project
 
 **Author:** Jake Mahoney  
-**Date:** 2026-02-27  
+**Date:** 2026-03-03  
 
 ## Description
 This project creates a normalized relational database from a credit card transactions dataset and analyzes trends in spending and fraud.  
