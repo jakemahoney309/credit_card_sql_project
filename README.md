@@ -37,7 +37,21 @@ Referential relationships:
 
 - `cards.customer_id → customers.customer_id`  
 - `transactions.card_id → cards.card_id`  
-- `transactions.merchant_id → merchants.merchant_id`  
+- `transactions.merchant_id → merchants.merchant_id`
+
+## Key Findings
+- ~$91M in total transaction volume, with an overall fraud rate of 4.37%.
+  - Average transaction: $70.35
+  - Median transaction: $47.52
+- Transactions over $500 had a fraud rate exceeding 23%, compared to ≤1% for transactions below $500.
+  Fraud incidence increased sharply during late-night hours (22:00–23:00), peaking near 23%, and remained elevated (~6%) until 05:00. Daytime fraud rates ranged between 0.5–1.5%.
+- A small subset of merchants showed fraud rates above 20%, though they represented a limited share of total transactions.
+- Customers in towns with populations under 10,000 exhibited the highest average total spend per customer ($94,590.61). Fraud rates remained relatively consistent across population sizes (4.1–4.8%).
+- Wyoming had the highest average customer spend, followed by West Virginia and Arkansas.
+
+## Insights
+- Fradulent transactions are typically made at night, for large purchase amounts, and at specific merchants. Statagies for reducing fraud should priorotize monitoring transactions of this type.
+- Rural markets should be targeted for growth. Customers form towns of under 10K people and from predomintly rural states show the highest average spend per customer. Fraud rates for these areas are not meaningfuly different from other locations as well, presenting no increaced risk.
 
 ## How to Run
 1. Create a new SQLite database  
