@@ -7,7 +7,7 @@
 SELECT 
 	ROUND(SUM(t.amount),2) AS total_transaction_amount,
 	(SELECT sum(amount) FROM transactions WHERE is_fraud = 1) AS total_fraud_amount, 
-	ROUND((SELECT sum(amount) FROM transactions WHERE is_fraud = 1)/SUM(t.amount),2) AS percent_fraud,
+	ROUND((SELECT sum(amount) FROM transactions WHERE is_fraud = 1)*100.0/SUM(t.amount),2) AS percent_fraud,
 	COUNT(*) AS num_transactions, 
 	ROUND(AVG(t.amount),2) AS average_transaction_amount, 
 	ROUND(( 
