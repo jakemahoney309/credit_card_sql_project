@@ -87,7 +87,7 @@ SELECT
 	ROUND(SUM(t.amount),2) AS total_spent,
 	ROUND(SUM(t.amount)/COUNT(DISTINCT cu.customer_id),2) AS average_spent_per_customer,
 	ROUND(SUM(CASE WHEN is_fraud=1 THEN t.amount ELSE 0 END),2) AS total_fraud,
-	ROUND(SUM(CASE WHEN is_fraud=1 THEN t.amount ELSE 0 END)/ SUM(t.amount),2) AS percent_fraud
+	ROUND(SUM(CASE WHEN is_fraud=1 THEN t.amount ELSE 0 END) * 100.0/ SUM(t.amount),2) AS percent_fraud
 FROM customers cu
 JOIN cards ca
 	ON ca.customer_id = cu.customer_id
